@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blacklist UI</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ccf0172ee0.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="container" class="container">
+        <div class="winda" id="winda">
+            <div class="header" id="windaheader">
+                <button onclick="switchList('vehicles')" class="btn" id="btn">
+                    <i class="fa-solid fa-car"></i> Vehicles
+                </button>
+                <button onclick="switchList('weapons')" class="btn" id="btn">
+                    <i class="fa-solid fa-gun"></i> Weapons
+                </button>
+                <button onclick="switchList('peds')" class="btn" id="btn">
+                    <i class="fa-solid fa-person"></i> Peds
+                </button>
+            </div>
+
+            <div class="body" id="windabody">
+                <div class="blacklistOptions" id="blacklistOptions">
+                    <div class="header"><span id="edit-title">Add a new blacklist</span></div>
+                </div>
+
+                <div class="blacklist" id="blacklist">
+                    <div class="header"><span id="list-title">Vehicles</span></div>
+                    <ul class="list" id="list">
+                        <li>Full</li>
+                        <li>Of</li>
+                        <li>Things</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer" id="windabody">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

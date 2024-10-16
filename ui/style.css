@@ -1,0 +1,92 @@
+:root {
+    --clr-primary: #495057;
+    --clr-secondary: #343A40;
+    --clr-tertiary: #2F3031;
+    --clr-border: #000000;
+    --clr-text: #FFFFFF;
+}
+
+body {
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    color: var(--clr-text);
+    font-size: 12px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.winda {
+    display: flex;
+    flex-direction: column;
+
+    height: 613px;
+    width: 745px;
+    background-color: var(--clr-primary);
+    border: 3px solid var(--clr-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.winda > .header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 45px;
+    padding: 0 20px;
+    background-color: var(--clr-secondary);
+}
+
+.btn {
+    background-color: var(--clr-tertiary);
+    width: 95px;
+    height: 23px;
+    margin-right: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--clr-text);
+    border: none;
+    font-size: 12px;
+}
+
+.btn > i {
+    margin-right: 5px;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    height: 568px;
+    overflow-y: auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.blacklistOptions, .blacklist {
+    background-color: var(--clr-secondary);
+    width: 320px;
+    height: 491px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.blacklistOptions > .header, .blacklist > .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    padding: 0 20px;
+    background-color: var(--clr-tertiary);
+}
