@@ -63,8 +63,8 @@ AddEventHandler('onresourcestart', function(resouce)
     end
 end)
 
-RegisterNetEvent('catty:blacklist:getPerms')
-AddEventHandler('catty:blacklist:getPerms', function()
+RegisterNetEvent('catty:blacklist:requestBlacklists')
+AddEventHandler('catty:blacklist:requestBlacklists', function()
     local source = source
     getPlyPerms(source)
 end)

@@ -33,7 +33,7 @@ Config.Permissions.Admin = {
     },
 
     jobs = {
-        enabled = true,
+        enabled = false,
         list = {
             {'STAFF', 400}
         }
@@ -114,10 +114,16 @@ Config.Permissions.hasJob = function(source, job, rank)
 end
 
 Config.Notify = {
-    script = 'mythic_notify',
     vehicleDisallowed = 'You are not allowed to use this vehicle.',
     weaponDisallowed = 'You are not allowed to use this weapon.',
-    pedDisallowed = 'You are not allowed to use this ped.'
+    pedDisallowed = 'You are not allowed to use this ped.',
+    func = function(type, msg, length)
+        if not (msg) then return end
+        type = type or 'error'
+        length = length or 5000
+
+        exports['mythic_notify']:SendAlert(type, msg)
+    end
 }
 
 Config.OpenMenu = {

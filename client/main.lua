@@ -50,7 +50,7 @@ local function checkPed(ped)
             SetPlayerModel(PlayerId(), 'mp_m_freemode_01')
             SetModelAsNoLongerNeeded('mp_m_freemode_01')
 
-            Notify('error', Config.Notify.pedDisallowed)
+            Config.Notify.func('error', Config.Config.Notify.func.pedDisallowed)
         end
     end
 end
@@ -77,7 +77,7 @@ local function checkWeapon(ped)
     if (weapon ~= (nil)) then
         if (TableInclude(disallowedWeapons, weapon)) then
             RemoveWeaponFromPed(ped, weapon)
-            Notify('error', Config.Notify.weaponDisallowed)
+            Config.Notify.func('error', Config.Config.Notify.func.weaponDisallowed)
         end
     end
 end
@@ -114,7 +114,7 @@ local function checkVehicle(ped)
         if (TableInclude(disallowedVehicles, model)) then
             DeleteEntity(veh)
             ClearPedTasksImmediately(ped)
-            Notify('error', Config.Notify.vehicleDisallowed)
+            Config.Notify.func('error', Config.Config.Notify.func.vehicleDisallowed)
         end
     end
 
@@ -138,7 +138,7 @@ local function checkPubcop(ped)
                 DeleteEntity(veh)
                 ClearPedTasksImmediately(ped)
 
-                Notify('error', Config.Notify.vehicleDisallowed)
+                Config.Notify.func('error', Config.Config.Notify.func.vehicleDisallowed)
 
                 RequestModel(Config.Permissions.Vehicles.pubcop.VehicleSpawnCode)
                 while not HasModelLoaded(Config.Permissions.Vehicles.pubcop.VehicleSpawnCode) do
@@ -149,16 +149,6 @@ local function checkPubcop(ped)
                 SetPedIntoVehicle(ped, veh, -1)
             end
         end
-    end
-end
-
-function Notify(type, msg, length)
-    if not (msg) then return end
-    type = type or 'error'
-    length = length or 5000
-
-    if (Config.Notify.script == 'mythic_notify') then
-        exports['mythic_notify']:SendAlert(type, msg, length)
     end
 end
 
