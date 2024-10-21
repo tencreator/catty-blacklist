@@ -11,7 +11,7 @@ Config.Discord = {
                 ['NAME'] = 000000000000000
             }
         }
-    }
+    },
 
     token = 'TOKEN'
 }
